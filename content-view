@@ -8,48 +8,6 @@ struct Item: Identifiable {
     var link: String?
     var category: String
     var isInstalled: Bool = false
-}
-class ItemStore: ObservableObject {
-    @Published var items: [Item] = [
-        Item(name: "iOS++ ", description: "Tweaks for non-jailbroken devices, download Jailbreaks, paid games free, emulators, useful programs like a QR Code maker and much more with iOS++!", link: "https://www.icloud.com/shortcuts/b9026ff325534917910dbb23d16b46b3", category: "Tweaks"),
-        Item(name: "The Game Of Brightness!!", description: "Game: Try to match the brightness level with the brightness level Siri asks for", link: "https://www.icloud.com/shortcuts/f3071bccc01a4534836b9aa395771d08", category: "Games"),
-        Item(name: "Grabstagram", description: "Download any image from Instagram", link: "https://www.icloud.com/shortcuts/4fad4abc9835489597200c55f9260b88", category: "Utilities"),
-        Item(name: "Rebind", description: "Change what the physical buttons on your device do.", link:  "https://www.icloud.com/shortcuts/062f55989ba74abb95978da2106e0821", category: "Tweaks"),
-        Item(name: "Text Effects", description: "Lets you apply special effects to text. Example - ᴴᵉˡˡᵒ", link: "https://www.icloud.com/shortcuts/c83ca12fd53f4e54b3337b2f06d28cd1", category: "Utilities"),
-        Item(name: "iEmpty", description: "Put empty spaces in between apps on the Home Screen.", link: "https://www.icloud.com/shortcuts/73c3a00aab9d4c4c923a6f66c6475e97", category: "Tweaks"),
-        Item(name: "App Icon Downloader", description: "Download any iOS/macOS App Icon", link: "https://www.icloud.com/shortcuts/0f977bcd887a4169ae78a63090b0a1db", category: "Developer"),
-        Item(name: "Charging notification", description: "Set a Battery % you wish to be notified when it is reached.", link: "https://www.icloud.com/shortcuts/ac6f77095cd948c8927796e9373285f8", category: "Tweaks"),
-        Item(name: "TLDR;", description: "Get Brief Summary From The Text of Your Chosen Image or Screenshot - DISCLAIMER: You need the ChatGPT app to use this shortcut", link: "https://www.icloud.com/shortcuts/7a9b6910a43443fdb3f6a7e25622bbc2", category: "Utilities"),
-        Item(name: "iOS Skins", description: "Make custom icons for apps!", link: "https://www.icloud.com/shortcuts/cb36e835446d40ad8f0d280d50b4476c", category: "Tweaks"),
-        Item(name: "iTweak", description: "The shortcut is currently unstable! It may not work…", link: "https://www.icloud.com/shortcuts/b0c6a3f1946a42fcb30841079897646f", category: "Tweaks"),
-        Item(name: "Zinc", description: "Preserve your battery to the max ⚡️", link: "https://www.icloud.com/shortcuts/43801a17d31a4a028117ce8c724791d5", category: "Utilities"),
-        Item(name: "All-In-One-Generator 2.0", description: "Generate Numbers, Passwords, a (live) Countdown and more!", link: "https://www.icloud.com/shortcuts/871529fa9e3b495e9a9f558485fe81c7", category: "Utilities"),
-        Item(name: "AirStudio", description: "The best AirPods companion Shortcut - with full support for the Apple Watch!", link: "https://www.icloud.com/shortcuts/5d651c24cfa14404bc0f6d028b160846", category: "Utilities"),
-        Item(name: "Twitter Video Downloader", description: "Download Twitter Videos, GIFs and photos.", link: "https://www.icloud.com/shortcuts/fb2d12ba6b7a47db944748f032e73210", category: "Utilities"),
-        Item(name: "Battery Life", description: "How much time is left until the iPhone runs out of battery", link: "https://www.icloud.com/shortcuts/728f6b127e3241a6baf9c534bd6eb9ff", category: "Utilities"),
-        Item(name: "Clipboard Manager", description: "Manage and organize your clipboard history.", link: "https://www.icloud.com/shortcuts/2d7d6847762047a198423dc96dd27775", category: "Productivity"),
-        Item(name: "WiFi QR Code Generator", description: "Generate QR codes for WiFi network connections.", link: "https://www.icloud.com/shortcuts/93af2bcd8f85481daf187bf2f11347e0", category: "Utilities"),
-        Item(name: "Advanced Password Generator", description: "Generate ultra-secure passwords. NOTE: This shortcut generates random ultra-secure passwords and copies them to the clipboard for 5 minutes; after that time, it’ll be destroyed from the clipboard.", link: "https://www.icloud.com/shortcuts/7df130657a2b4471ad155fbaf80d9970", category: "Productivity"),
-        Item(name: "Useless Facts", description: "Discover interesting random facts and trivia.", link: "https://www.icloud.com/shortcuts/2a6c02c2c98846b5a1fbd083fa80d695", category: "Entertainment"),
-        Item(name: "Meme Generator", description: "Generate memes using templates or a custom image!", link: "https://www.icloud.com/shortcuts/810741b6ad8e4e80b979cc3b8e2d7436", category: "Entertainment"),
-        Item(name: "Notifi", description: "An interactive, customizable notification tester", link: "https://www.icloud.com/shortcuts/da23e11046104b72855376c58d47070e", category: "Developer"),
-        Item(name: "❄️𝗦𝗻𝗼𝘄𝗕𝗼𝗮𝗿𝗱𝗟𝗶𝘁𝗲❄️", description: "Jailbreak Alternative: Save Jailbreak Themes(.deb, .zip) and create custom icons on your HomeScreen.", link: "https://www.icloud.com/shortcuts/9f91369870de41c39f8dcfcb4b043a37", category: "Tweaks"),
-        Item(name: "bitin (Device Tweaker)", description: "Tweak Your Device - No Jailbreak Required!", link: "https://www.icloud.com/shortcuts/1f431fe388864a1eaf6091c998e9eabc", category: "Tweaks"),
-        Item(name: "Mood Battery", description: "Track your mood using a virtual battery through out the day", link: "https://www.icloud.com/shortcuts/393d04991b824f3687234ee03066190d", category: "Utilities"),
-        Item(name: "Journal", description: "A shortcut that gives you the ability to jot down things that go on during your day.", link: "https://www.icloud.com/shortcuts/06bef2f6b20043328d1c43a7ec6533ed", category: "Utilities"),
-        Item(name: "Sticky Note", description: "Keep notes on your wallpaper!", link: "https://www.icloud.com/shortcuts/907c0ba5d5b94dd7bc8f8b613990200b", category: "Utilities"),
-        Item(name: "SpamBot", description: "A tool for sending many messages automatically", link: "https://www.icloud.com/shortcuts/3a6e953fc3f74c8bab17f60a79eb6015", category: "Entertainment"),
-        Item(name: "WeatherWalls", description: "Automatically change wallpapers on weather conditions", link: "https://www.icloud.com/shortcuts/b8f8ecb70c3a416aad8398af7c929b2d", category: "Utilities"),
-        Item(name: "The Oregon Trail", description: "Remake of the Oregon Trail in Shortcuts!", link: "https://www.icloud.com/shortcuts/bf6f7546b1f04fb9a137c2b87aba52fe", category: "Games"),
-        Item(name: "Blooket Hack", description: "The hack for the famous website called blooket.com like kahoot. !If you are wondering how to use this hack go on to Blooket click the share icon and scroll until you find “Blooket Hack 👻”!", link: "https://www.icloud.com/shortcuts/23ca557ae26340de94f6dd884306e3a0", category: "Games"),
-        Item(name: "App Store Wishlist", description: "Checks, adds & installs apps from The Wishlist", link: "https://www.icloud.com/shortcuts/11503e2bc82e4d648c2c733ef379a48a", category: "Utilities"),
-        Item(name: "City Manager", description: "A game where you can manage a city - Build buildings in order to amass population and wealth.", link: "https://www.icloud.com/shortcuts/2df80924cda84581b24bff3146ab23d1", category: "Games"),
-        Item(name: "Beat the Bank", description: "make a bet and guess the number.  Try to beat the bank and become the GOAT.", link: "https://www.icloud.com/shortcuts/79e2acef5a53447b823a4bc47a3a80a4", category: "Games"),
-        Item(name: "Gemini Pro Chat", description: "Make a basic request to Google’s new AI, Gemini Pro", link: "https://www.icloud.com/shortcuts/d4c8fa795621418ca9d0dcef01088e4e", category: "Utilities"),
-        Item(name: "Mini Safari", description: "Search and browse the web, all on your wrist!🤩 Features: • Search the web (via search engine of choice) • Open a website (via URL) • NEW Bookmarks! • Play a hidden game!", link: "https://www.icloud.com/shortcuts/6148d88fae1945e3ba59df007716dc5c", category: "Utilities"),
-
-    ]
-}
 
 struct OnboardingView: View {
     @State private var navigateToApp = false
