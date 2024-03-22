@@ -171,33 +171,6 @@ struct ContentView: View {
         .background(selectedBackgroundColor.edgesIgnoringSafeArea(.all))
     }
 }
-
-        struct ItemDetailView: View {
-            var item: Item
-            
-            var body: some View {
-                VStack {
-                    Text(item.name)
-                        .font(.title)
-                        .padding()
-                    
-                    Text(item.description)
-                        .font(.body)
-                        .multilineTextAlignment(.center)
-                        .padding()
-                    
-                    if let link = item.link {
-                        Link("GET", destination: URL(string: link)!)
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 20)
-                            .padding(.vertical, 10)
-                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue))
-                    }
-                }
-                .navigationBarTitle(item.name)
-            }
-        }
         
         struct SearchBar: View {
             @Binding var text: String
