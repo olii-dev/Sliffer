@@ -171,31 +171,7 @@ struct ContentView: View {
         .background(selectedBackgroundColor.edgesIgnoringSafeArea(.all))
     }
 }
-        
-        struct SearchBar: View {
-            @Binding var text: String
-            var placeholder: String
-            
-            var body: some View {
-                HStack {
-                    Image(systemName: "magnifyingglass")
-                    TextField(placeholder, text: $text)
-                        .foregroundColor(.primary)
-                    if !text.isEmpty {
-                        Button(action: {
-                            self.text = ""
-                        }) {
-                            Image(systemName: "xmark.circle.fill")
-                                .foregroundColor(.primary)
-                        }
-                    }
-                }
-                .padding(.horizontal)
-                .frame(height: 40)
-                .background(Color(.systemGray6))
-                .cornerRadius(10)
-            }
-        }
+    
         
         struct CategoryListView: View {
             var categories: [String]
