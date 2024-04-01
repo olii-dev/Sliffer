@@ -1,3 +1,11 @@
+struct Item: Identifiable {
+    var id = UUID()
+    var name: String
+    var description: String
+    var link: String?
+    var category: String
+    var isInstalled: Bool = false
+
 }
 class ItemStore: ObservableObject {
     @Published var items: [Item] = [
