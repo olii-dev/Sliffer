@@ -171,22 +171,6 @@ struct ContentView: View {
         .background(selectedBackgroundColor.edgesIgnoringSafeArea(.all))
     }
 }
-    
-        
-        struct CategoryListView: View {
-            var categories: [String]
-            var items: [Item]
-            
-            var body: some View {
-                List(categories, id: \.self) { category in
-                    NavigationLink(destination: CategoryDetailView(category: category, items: items)) {
-                        Text(category)
-                    }
-                }
-                .listStyle(GroupedListStyle())
-                .navigationBarTitle("📋 Explore - Categories")
-            }
-        }
         
         struct CategoryDetailView: View {
             var category: String
