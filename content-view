@@ -170,27 +170,7 @@ struct ContentView: View {
         .preferredColorScheme(colorScheme)
         .background(selectedBackgroundColor.edgesIgnoringSafeArea(.all))
     }
-}
-        
-        struct InstalledItemsView: View {
-            @Binding var installedItem: Item?
-            var installedItems: [Item]
-            
-            var body: some View {
-                if let item = installedItem {
-                    ItemDetailView(item: item)
-                } else {
-                    List(installedItems) { item in
-                        NavigationLink(destination: ItemDetailView(item: item)) {
-                            HStack {
-                                Text(item.name)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        
+}       
         
         struct SettingsView: View {
             @Binding var isDarkModeOn: Bool
