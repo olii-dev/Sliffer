@@ -1,0 +1,40 @@
+        struct CategoryDetailView: View {
+            var category: String
+            var items: [Item]
+            
+            var body: some View {
+                List(items.filter { $0.category == category }) { item in
+                    NavigationLink(destination: ItemDetailView(item: item)) {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(item.name)
+                                    .font(.headline)
+                                    .foregroundColor(.primary)
+                                    .lineLimit(2)
+                                Text(item.description)
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                                    .lineLimit(3)
+                            }
+                            Spacer()
+                            if let link = item.link {
+                                Button(action: {
+                                    UIApplication.shared.open(URL(string: link)!)
+                                }) {
+                                    Text("GET")
+                                        .font(.subheadline)
+                                        .foregroundColor(.white)
+                                        .padding(.horizontal, 10)
+                                        .padding(.vertical, 6)
+                                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue))
+                                }
+                                .padding(.trailing, 10)
+                            }
+                        }
+                        .padding(.vertical, 8)
+                    }
+                }
+                .listStyle(GroupedListStyle())
+                .navigationBarTitle(category)
+            }
+        }

@@ -1,0 +1,73 @@
+struct OnboardingView: View {
+    @State private var navigateToApp = false
+    
+    var body: some View {
+        TabView {
+            OnboardingScreen(title: "Welcome to Sliffer", subtitle: "Discover amazing shortcuts for your iOS device!", imageName: "star.fill")
+            OnboardingScreen(title: "Search Shortcuts", subtitle: "Use the search tab to find specific shortcuts quickly.", imageName: "magnifyingglass")
+            OnboardingScreen(title: "Explore Categories", subtitle: "Explore different categories in the Explore tab.", imageName: "binoculars.fill")
+            OnboardingScreen(title: "Customize Settings", subtitle: "Adjust your preferences in the Settings tab.", imageName: "gear")
+            OnboardingScreen(title: "Installed Shortcuts (Coming Soon)", subtitle: "View and manage your installed shortcuts.", imageName: "square.and.arrow.down.fill")
+            OnboardingScreen(title: "You're all set!", subtitle: "Enjoy!", imageName: "trohpy.fill")
+                .overlay(
+                    Button(action: {
+                        navigateToApp = true
+                    }) {
+                        Text("Get Started")
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue))
+                    }
+                        .padding(.bottom, 50)
+                        .fullScreenCover(isPresented: $navigateToApp, content: {
+                            ContentView()
+                        })
+                )
+        }
+        .tabViewStyle(PageTabViewStyle())
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+    }
+}
+
+struct OnboardingScreen: View {
+    var title: String
+    var subtitle: String
+    var imageName: String
+    
+    var body: some View {
+        VStack {
+            Spacer()
+            Image(systemName: imageName)
+                .font(.system(size: 120))
+                .foregroundColor(.blue)
+            Text(title)
+                .font(.title)
+                .fontWeight(.bold)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+                .foregroundColor(.primary)
+            Text(subtitle)
+                .font(.subheadline)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+                .foregroundColor(.secondary)
+            Spacer()
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .preferredColorScheme(.light)
+            .previewDevice("iPhone 11")
+    }
+}
+
+struct OnboardingView_Previews: PreviewProvider {
+    static var previews: some View {
+        OnboardingView()
+            .preferredColorScheme(.light)
+            .previewDevice("iPhone 11")
+    }
+}
