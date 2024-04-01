@@ -1,14 +1,6 @@
 import SwiftUI
 import CoreHaptics
 
-struct Item: Identifiable {
-    var id = UUID()
-    var name: String
-    var description: String
-    var link: String?
-    var category: String
-    var isInstalled: Bool = false
-
 struct ContentView: View {
     @ObservedObject var itemStore = ItemStore()
     @State private var searchText = ""
