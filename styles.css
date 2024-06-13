@@ -8,11 +8,12 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     background-color: var(--background-color);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
+    line-height: 1.5;
 }
 
 header {
@@ -22,6 +23,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 nav ul {
@@ -30,6 +32,8 @@ nav ul {
     display: flex;
     justify-content: center;
     background: var(--secondary-color);
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 nav ul li {
@@ -46,10 +50,15 @@ nav ul li a {
 
 main {
     padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
 }
 
 section {
-    margin-bottom: 2rem;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 footer {
@@ -60,17 +69,4 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
-}
-
-.dark-mode {
-    background-color: var(--dark-background-color);
-    color: var(--dark-text-color);
-}
-
-.dark-mode header, .dark-mode footer {
-    background: var(--secondary-color);
-}
-
-.dark-mode nav ul {
-    background: var(--primary-color);
 }
