@@ -45,6 +45,8 @@ class ItemStore: ObservableObject {
         Item(name: "Beat the Bank", description: "make a bet and guess the number.  Try to beat the bank and become the GOAT.", link: "https://www.icloud.com/shortcuts/79e2acef5a53447b823a4bc47a3a80a4", category: "Games"),
         Item(name: "Gemini Pro Chat", description: "Make a basic request to Google’s new AI, Gemini Pro", link: "https://www.icloud.com/shortcuts/d4c8fa795621418ca9d0dcef01088e4e", category: "Utilities"),
         Item(name: "Mini Safari", description: "Search and browse the web, all on your wrist!🤩 Features: • Search the web (via search engine of choice) • Open a website (via URL) • NEW Bookmarks! • Play a hidden game!", link: "https://www.icloud.com/shortcuts/6148d88fae1945e3ba59df007716dc5c", category: "Utilities"),
+        Item(name: "Icon Themer", description: "Create custom home screen icons that launch your apps directly", link: "https://www.icloud.com/shortcuts/047abfb1dc3d4d55b4cbc469df5ec021", category: "Utilities"),
+        Item(name: "Auto Message", description: "Schedule messages to be sent later", link: "hhttps://www.icloud.com/shortcuts/4f5fa829b0ee4dd0a98c02af8cb1a95f", category: "Productivity")
 
     ]
 }
